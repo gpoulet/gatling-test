@@ -8,8 +8,8 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import {Home, AppBar, Stats} from "./components";
-import {ROUTE_HOME, ROUTE_STATS} from "./constants";
+import {Home, AppBar, Stats, UserDetails} from "./components";
+import {ROUTE_HOME, ROUTE_STATS, ROUTE_USERS} from "./constants";
 
 function App() {
     return (
@@ -19,6 +19,9 @@ function App() {
                 <Switch>
                     <Route path={ROUTE_STATS}>
                         <Stats/>
+                    </Route>
+                    <Route path={ROUTE_USERS+"/:id"}>
+                        <UserDetails/>
                     </Route>
                     <Route path={ROUTE_HOME}>
                         <Home/>
