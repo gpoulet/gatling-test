@@ -1,9 +1,8 @@
 import axios from "axios";
-import User from "../models/User";
-
-const url = "https://jsonplaceholder.typicode.com/users";
+import {User} from "../models";
+import {URL_USERS} from "../constants";
 
 export function fetchUsers(): Promise<User[]> {
-    return axios.get(url)
+    return axios.get(URL_USERS)
         .then(response => response.data);
 };
