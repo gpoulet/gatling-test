@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import UserPosts from "./UserPosts";
 import {AppDispatch, RootState} from "../../store";
-import {getPostsById} from "../../selectors";
+import {getPostsByUserId} from "../../selectors";
 import {loadPosts} from "../../actions";
 
 type UserPostsOwnProps = {
@@ -10,7 +10,7 @@ type UserPostsOwnProps = {
 
 const mapStateToProps = (state: RootState, {id}: UserPostsOwnProps) => {
     return ({
-        posts: getPostsById(state, Number(id))
+        posts: getPostsByUserId(state, Number(id))
     });
 }
 
