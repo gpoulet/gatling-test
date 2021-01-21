@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {Post} from "../../models";
 import Card from "react-bootstrap/Card";
 
-type UserPostProps = {
+export type UserPostProps = {
     post: Post
 }
 

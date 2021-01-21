@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import {Pie} from '@reactchartjs/react-chart.js'
 import {ChartOptions} from 'chart.js'
 
-type StatsProps = {
+export type StatsProps = {
     numberOfUserLivingInAnApt: number,
     numberOfUserLivingInASuite: number
 }

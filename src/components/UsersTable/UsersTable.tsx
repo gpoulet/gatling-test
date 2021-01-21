@@ -1,16 +1,13 @@
 import React, {FC} from 'react';
 import {User} from "../../models";
 import Table from "react-bootstrap/Table";
-import {useHistory} from "react-router-dom";
-import {ROUTE_USERS} from "../../constants";
 
-type UsersTableProps = { users: User[] };
+export type UsersTableProps = {
+    users: User[]
+    onClick: (id: number) => void
+};
 
-const UsersTable: FC<UsersTableProps> = ({users}) => {
-    const history = useHistory();
-
-    const onClick = (id: number) => history.push(ROUTE_USERS + "/" + id);
-
+const UsersTable: FC<UsersTableProps> = ({users, onClick}) => {
     return (
         <Table striped bordered hover>
             <thead>
