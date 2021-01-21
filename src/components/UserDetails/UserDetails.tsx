@@ -27,7 +27,7 @@ const UserDetails: FC<UserDetailsProps> = ({users, loadUsers}) => {
     }, [users, loadUsers])
 
     return (
-        <Container>
+        <Container className="userdetails-container">
             <UserCard id={id}/>
             <Button variant="primary" onClick={() => history.push(ROUTE_HOME)}>Back</Button>
         </Container>

@@ -10,21 +10,18 @@ const UserCard: FC<User> = ({id, name, username, email, phone, website, company,
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
-                    <p>
+
                         Email : {email}<br/>
                         Phone : {phone}<br/>
                         Website : {website}<br/>
                         Company : {company.name}
-                    </p>
                 </Card.Text>
                 <Card.Text>
-                    <p>
                         Address :<br/>
                         {street}<br/>
                         {suite}<br/>
                         {zipcode}<br/>
                         {city}
-                    </p>
                 </Card.Text>
             </Card.Body>
         </Card>
