@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UsersTable renders correctly 1`] = `
+<table
+  className="table table-striped table-bordered table-hover"
+>
+  <thead>
+    <tr>
+      <th>
+        Id
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Username
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      onClick={[Function]}
+    >
+      <td>
+        1
+      </td>
+      <td>
+        Leanne Graham
+      </td>
+      <td>
+        Bret
+      </td>
+    </tr>
+    <tr
+      onClick={[Function]}
+    >
+      <td>
+        2
+      </td>
+      <td>
+        Ervin Howell
+      </td>
+      <td>
+        Antonette
+      </td>
+    </tr>
+    <tr
+      onClick={[Function]}
+    >
+      <td>
+        3
+      </td>
+      <td>
+        Clementine Bauch
+      </td>
+      <td>
+        Samantha
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

@@ -23,14 +23,14 @@ export const loadUsers = (): (dispatch: AppDispatch) => Promise<{ payload: User[
     };
 }
 
-export const updateUsername = (id: number, username: string): (dispatch: AppDispatch, getState: () => RootState) => Promise<{ payload: User; type: string }> => {
+export const updateName = (id: number, name: string): (dispatch: AppDispatch, getState: () => RootState) => Promise<{ payload: User; type: string }> => {
     return (dispatch, getState) => {
 
         const state = getState();
         const user = getUserById(state, id);
 
         if (user) {
-            const updatedUser: User = {...user, username}
+            const updatedUser: User = {...user, name}
             return putUser(updatedUser)
                 .then(res => dispatch(setUser(res)))
         } else {

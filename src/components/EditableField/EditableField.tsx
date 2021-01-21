@@ -6,15 +6,15 @@ import {User} from "../../models";
 type EditableFieldProps = {
     value: string,
     id: number,
-    updateUsername: (id: number, name: string) => Promise<{ payload: User; type: string }>
+    updateName: (id: number, name: string) => Promise<{ payload: User; type: string }>
 }
 
-const EditableField: FC<EditableFieldProps> = ({value, id, updateUsername}) => {
+const EditableField: FC<EditableFieldProps> = ({value, id, updateName}) => {
     const [editing, setEditing] = useState(false);
     const [username, setUsername] = useState(value);
 
     const onSave = () => {
-        updateUsername(id, username)
+        updateName(id, username)
             .finally(() => setEditing(false));
     }
 

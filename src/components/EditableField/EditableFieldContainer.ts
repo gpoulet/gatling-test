@@ -1,11 +1,10 @@
 import {connect} from "react-redux";
 import {AppDispatch} from "../../store";
-import {updateUsername} from "../../actions";
+import {updateName} from "../../actions";
 import EditableField from "./EditableField";
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
-    updateUsername: (id: number, name: string) => dispatch((updateUsername(id, name)))
+    updateName: (id: number, name: string) => dispatch((updateName(id, name)))
 })
-
 
 export default connect(undefined, mapDispatchToProps)(EditableField)

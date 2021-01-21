@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserPost renders correctly 1`] = `
+<div
+  className="userpost-card card"
+>
+  <div
+    className="card-header"
+  >
+    Post #
+    1
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="card-title h5"
+    >
+      titre 1
+    </div>
+    <p
+      className="card-text"
+    >
+      lorem
+    </p>
+  </div>
+</div>
+`;

@@ -13,10 +13,10 @@ const UserCard: FC<UserCardProps> = ({user}) => {
         const {street, suite, zipcode, city} = address;
         return (
             <Card className="usercard">
-                <Card.Header>User #{id} : <EditableField value={username} id={id}/></Card.Header>
+                <Card.Header>User #{id} : {username}</Card.Header>
                 <Card.Body>
                     <Card.Title>
-                        {name}
+                        <EditableField value={name} id={id}/>
                     </Card.Title>
                     <Card.Text>
                         Email : {email}<br/>
