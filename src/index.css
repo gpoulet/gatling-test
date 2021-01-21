@@ -13,7 +13,7 @@ code {
 }
 
 .home-container, .userdetails-container {
-  margin-top: 20px
+  margin: 20px 0;
 }
 
 .title {
@@ -22,4 +22,17 @@ code {
 
 .stats {
   margin-top: 50px;
+}
+
+.userpost-card, .usercard {
+  margin: 20px 0;
+}
+
+input.form-control.edit-field {
+  width: 200px;
+  display: inline;
+}
+
+button.edit-button.btn {
+  margin-left: 10px;
 }

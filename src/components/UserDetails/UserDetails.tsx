@@ -2,10 +2,11 @@ import React, {FC, useEffect, useState} from "react";
 import {User} from "../../models";
 import Loader from "../Loader";
 import UserCard from "../UserCard";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import {useHistory, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {ROUTE_HOME} from "../../constants";
+import UserPosts from "../UserPosts";
+import NavButton from "../NavButton";
 
 type UserDetailsProps = {
     users: User[],
@@ -18,15 +19,14 @@ interface ParamTypes {
 
 const UserDetails: FC<UserDetailsProps> = ({users, loadUsers}) => {
 
-    const [loading, setloading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const {id} = useParams<ParamTypes>()
-    const history = useHistory();
 
     useEffect(() => {
         if (users.length === 0) {
-            setloading(true)
+            setLoading(true)
             loadUsers()
-                .finally(() => setloading(false))
+                .finally(() => setLoading(false))
         }
     }, [users, loadUsers])
 
@@ -35,10 +35,16 @@ const UserDetails: FC<UserDetailsProps> = ({users, loadUsers}) => {
             {loading ? <Loader/> :
                 <>
                     <UserCard id={id}/>
-                    <Button variant="primary" onClick={() => history.push(ROUTE_HOME)}>Back</Button>
+                    <NavButton to={ROUTE_HOME} label="Back"/>
+                    {users.length > 0 &&
+                    (<>
+                        <UserPosts id={id}/>
+                        <NavButton to={ROUTE_HOME} label="Back"/>
+                    </>)}
                 </>}
         </Container>
     )
-};
+}
+;
 
 export default UserDetails;

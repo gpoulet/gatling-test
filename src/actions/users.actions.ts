@@ -1,12 +1,19 @@
 import {User} from "../models";
-import {fetchUsers} from "../services";
-import {AppDispatch} from "../store";
+import {fetchUsers, putUser} from "../services";
+import {AppDispatch, RootState} from "../store";
+import {getUserById} from "../selectors";
 
 export const SET_USERS = "users/SET_USERS"
+export const SET_USER = "users/SET_USER"
 
 export const setUsers = (users: User[]) => ({
     type: SET_USERS,
     payload: users
+});
+
+export const setUser = (user: User) => ({
+    type: SET_USER,
+    payload: user
 });
 
 export const loadUsers = (): (dispatch: AppDispatch) => Promise<{ payload: User[]; type: string }> => {
@@ -14,4 +21,20 @@ export const loadUsers = (): (dispatch: AppDispatch) => Promise<{ payload: User[
         return fetchUsers()
             .then(res => dispatch(setUsers(res)))
     };
+}
+
+export const updateUsername = (id: number, username: string): (dispatch: AppDispatch, getState: () => RootState) => Promise<{ payload: User; type: string }> => {
+    return (dispatch, getState) => {
+
+        const state = getState();
+        const user = getUserById(state, id);
+
+        if (user) {
+            const updatedUser: User = {...user, username}
+            return putUser(updatedUser)
+                .then(res => dispatch(setUser(res)))
+        } else {
+            return Promise.reject()
+        }
+    }
 }
