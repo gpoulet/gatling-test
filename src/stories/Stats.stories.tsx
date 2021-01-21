@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from "@storybook/react/types-6-0";
 
-import Stats, { StatsProps } from '../components/Stats/Stats';
+import Stats, { StatsProps } from "../components/Stats/Stats";
 
 export default {
-  title: 'Stats',
+  title: "Stats",
   component: Stats,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as Meta;
 

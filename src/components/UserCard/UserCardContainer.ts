@@ -1,17 +1,16 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import UserCard from "./UserCard";
-import {RootState} from "../../store";
-import {getUserById} from "../../selectors";
+import { RootState } from "../../store";
+import { getUserById } from "../../selectors";
 
 type UserCardOwnProps = {
-    id: string
-}
+  id: string;
+};
 
-const mapStateToProps = (state: RootState, {id}: UserCardOwnProps) => {
-    return ({
-        user: getUserById(state, Number(id))
-    });
-}
+const mapStateToProps = (state: RootState, { id }: UserCardOwnProps) => {
+  return {
+    user: getUserById(state, Number(id)),
+  };
+};
 
-
-export default connect(mapStateToProps)(UserCard)
+export default connect(mapStateToProps)(UserCard);

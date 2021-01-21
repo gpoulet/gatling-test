@@ -1,11 +1,14 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Stats from "./Stats";
-import {getNumberOfUserLivingInAnApt, getnumberOfUserLivingInASuite} from "../../selectors";
-import {RootState} from "../../store";
+import {
+  getNumberOfUserLivingInAnApt,
+  getnumberOfUserLivingInASuite,
+} from "../../selectors";
+import { RootState } from "../../store";
 
 const mapStateToProps = (state: RootState) => ({
-    numberOfUserLivingInAnApt: getNumberOfUserLivingInAnApt(state),
-    numberOfUserLivingInASuite: getnumberOfUserLivingInASuite(state)
-})
+  numberOfUserLivingInAnApt: getNumberOfUserLivingInAnApt(state),
+  numberOfUserLivingInASuite: getnumberOfUserLivingInASuite(state),
+});
 
-export default connect(mapStateToProps)(Stats)
+export default connect(mapStateToProps)(Stats);

@@ -1,18 +1,17 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import UserDetails from "./UserDetails";
-import {AppDispatch, RootState} from "../../store";
-import {getUsers} from "../../selectors";
-import {loadUsers} from "../../actions";
+import { AppDispatch, RootState } from "../../store";
+import { getUsers } from "../../selectors";
+import { loadUsers } from "../../actions";
 
 const mapStateToProps = (state: RootState, ownProps: any) => {
-    return ({
-        users: getUsers(state)
-    });
-}
+  return {
+    users: getUsers(state),
+  };
+};
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
-    loadUsers: () => dispatch((loadUsers()))
-})
+  loadUsers: () => dispatch(loadUsers()),
+});
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserDetails)
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetails);

@@ -1,12 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from "@storybook/react/types-6-0";
 
-import UserPost, { UserPostProps } from '../components/UserPost/UserPost';
+import UserPost, { UserPostProps } from "../components/UserPost/UserPost";
 
 export default {
-  title: 'UserPost',
+  title: "UserPost",
   component: UserPost,
   argTypes: {},
 } as Meta;
@@ -17,7 +17,7 @@ const post1 = {
   userId: 1,
   id: 1,
   title: "titre 1",
-  body: "lorem"
+  body: "lorem",
 };
 
 export const Post1 = Template.bind({});

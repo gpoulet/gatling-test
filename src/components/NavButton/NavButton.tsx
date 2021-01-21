@@ -1,17 +1,19 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import Button from "react-bootstrap/Button";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 interface NavButtonProps {
-    to: string,
-    label: string
+  to: string;
+  label: string;
 }
 
-const NavButton: FC<NavButtonProps> = ({to, label}) => {
-    const history = useHistory();
-    return (
-        <Button variant="primary" onClick={() => history.push(to)}>{label}</Button>
-    )
+const NavButton: FC<NavButtonProps> = ({ to, label }) => {
+  const history = useHistory();
+  return (
+    <Button variant="primary" onClick={() => history.push(to)}>
+      {label}
+    </Button>
+  );
 };
 
 export default NavButton;

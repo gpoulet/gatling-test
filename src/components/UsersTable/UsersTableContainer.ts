@@ -1,10 +1,10 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import UsersTable from "./UsersTable";
-import {getUsers} from "../../selectors";
-import {RootState} from "../../store";
+import { getUsers } from "../../selectors";
+import { RootState } from "../../store";
 
 const mapStateToProps = (state: RootState) => ({
-    users: getUsers(state)
-})
+  users: getUsers(state),
+});
 
-export default connect(mapStateToProps)(UsersTable)
+export default connect(mapStateToProps)(UsersTable);
