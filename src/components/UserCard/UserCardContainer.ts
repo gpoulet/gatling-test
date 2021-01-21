@@ -9,7 +9,7 @@ type UserCardOwnProps = {
 
 const mapStateToProps = (state: RootState, {id}: UserCardOwnProps) => {
     return ({
-        ...getUserById(state, Number(id))
+        user: getUserById(state, Number(id))
     });
 }
 
